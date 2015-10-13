@@ -1,0 +1,142 @@
+#wrapper{
+	background: $darkPrimaryColor;
+}
+#sidebar{
+	border-right: 1px solid lighten($primaryColor, 10%);
+	ul{
+		li{
+			border-bottom: 1px solid lighten($primaryColor, 10%);
+			a{
+				color: $textColor;
+				font-weight: 600;
+				.icon{
+					padding-right: 10px;
+				}
+			}
+			a:hover{
+				background: darken($primaryColor, 15%);
+			}
+			a:active{
+				background: none;
+			}
+			a:focus{
+				background: darken($primaryColor, 15%);
+			}
+			ul{
+				position: absolute;
+				display: none;
+				top: 0;
+				left: 100%;
+				min-width: 150px;
+				background: darken($primaryColor, 15%);
+				z-index: 9999;
+				@include shadow_3;
+
+			}
+
+		}
+		li:hover{
+			ul{
+				display: block;
+				li{
+					a{
+					
+					}
+					a:hover{
+						@include shadow_3;
+					}
+				}
+			}
+		}
+		.navigation-header{
+			font-size: 13pt;
+			color: $textColor;
+			text-transform: capitalize;
+			background: darken($darkPrimaryColor, 5%);
+			line-height: 40px;
+			margin: 0px;
+			padding: 0px 15px 0 15px;
+			line-height: 50px;
+		}
+	}
+	.user-area{
+		padding-top: 20px;
+		color: $textColor;
+		border-bottom: 4px solid lighten($primaryColor, 10%);
+		box-shadow: 1px 5px 50px 50px rgba(0, 0, 0, 0.3) inset;
+		img{
+			margin-bottom: 15px;
+			margin-top: 15px;
+			border: 5px solid lighten($primaryColor, 20%);
+		}
+		a{
+			position: relative;
+			font-weight: bold;
+			color: $green;
+			text-decoration: none;
+			text-transform: capitalize;
+
+			.user-action{
+				color: $textColor;
+				padding: 2px;
+			}
+		}
+		a:hover{
+			.user-action{
+				color: $green;
+			}
+		}
+		
+	}
+}
+#main-content{
+	background: #fff;
+	box-shadow: 3px 0px 3px rgba(0, 0, 0, 0.2) inset;
+	#header{
+		.navbar{
+			background: $primaryColor;
+			ul{
+				padding-right: 15px;
+				li{
+					padding: 0px 5px 0px 5px;
+
+					border-right: 1px solid lighten($primaryColor, 10%);
+					a{
+						color: $textColor;
+					}
+					.btn, .btn-danger{
+						border-radius: 0px !important;
+						background: $green !important;
+						border: 1px solid $green !important;
+					}
+				}
+				li:hover{
+					background: $darkPrimaryColor;
+					a{
+						color: $green;
+					}
+				}
+				li:last-child{
+					border-left: none;
+					a:hover{
+						color: $red;
+					}
+				}
+			}
+			
+			.navbar-brand{
+				color: $textColor;
+			}
+		}
+	}
+	#content{
+		padding: 5px;
+	}
+}
+#footer{
+	background: $lightPrimaryColor;
+	h4{
+		margin: 0;
+		line-height: 40px;
+	}
+}

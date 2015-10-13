@@ -1,0 +1,77 @@
+.widget{
+	margin: 15px;
+	background: $componentColor;
+	padding: 15px;
+	@include shadow_12;
+	border-radius: 2px;
+	.widget-title{
+		h3{
+			font-size: 15pt;
+			border-bottom: 1px solid lighten($lightPrimaryColor, 20%);
+			padding-bottom: 10px;
+		}
+	}
+}
+//button
+.btn{
+	background: none !important;
+	border:none !important;
+	transition: 0.5s;
+	color: $lightPrimaryColor !important;
+}
+.btn:hover{
+	color: $textColor !important;
+}
+.btn-default{
+	border: 1px solid $lightPrimaryColor !important;
+}
+.btn-primary{
+	border: 1px solid $blue !important;
+}
+.btn-success{
+	border: 1px solid $green !important;
+}
+.btn-info{
+	border: 1px solid $yellow !important;
+}
+.btn-warning{
+	border: 1px solid $red!important;
+}
+.btn-danger{
+	border: 1px solid $purpose !important;
+}
+.btn-default:hover{
+	background: $lightPrimaryColor !important;
+}
+.btn-primary:hover{
+	background: $blue !important;
+}
+.btn-success:hover{
+	background: $green !important;
+}
+.btn-info:hover{
+	background: $yellow!important;
+}
+.btn-warning:hover{
+	background: $red !important;
+}
+.btn-danger:hover{
+	background: $purpose !important;
+}
+//Modal
+.modal{
+	.modal-dialog{
+		border-radius: 0px !important;
+		.modal-content{
+			border-radius: 0px !important;
+			background: $componentColor;
+			.modal-body{
+				color: $lightPrimaryColor;
+				p{
+					text-align: justify;
+				}
+			}
+		}
+	}
+
+}

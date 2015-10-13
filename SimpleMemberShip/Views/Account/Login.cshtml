@@ -1,0 +1,25 @@
+﻿@model SimpleMemberShip.Models.User
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="col-md-4">
+        <label>Username</label>
+        @Html.TextBoxFor(model => model.Username, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Username)
+
+        <label>Password</label>
+        @Html.TextBoxFor(model => model.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Password)
+
+        <button class="btn btn-default">Login</button>
+    </div>
+}

@@ -1,0 +1,29 @@
+%reset{
+	border-radius: 0px !important;
+	}
+.navbar{
+	border:none !important;
+	border-radius: 0px !important;
+	margin-bottom: 0px !important;
+}
+.form-control{
+	@extend  %reset;
+}
+.btn{
+	@extend  %reset;
+
+}
+.btn:focus{
+	box-shadow: none !important;
+	outline: none;
+}
+.breadcrumb{
+	@extend  %reset;
+	padding:-15px;
+}
+a{
+	padding: 10px;
+}
+.btn, .label , .list-group{
+	border-radius: 10px !important;
+}

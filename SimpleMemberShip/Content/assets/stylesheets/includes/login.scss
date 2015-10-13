@@ -1,0 +1,32 @@
+#login-wrapper{
+	background: lighten(rgba($darkPrimaryColor, 50), 30);
+}
+#login{
+	margin-top: 200px;
+	width: 100%;
+	padding-left: -15px;
+	padding-right: -15px;
+	@include shadow_5;
+	background: $textColor;
+	.login-header{
+			background: $primaryColor;
+			h3{
+				margin: 0;
+				padding: 0;
+				color: $textColor;
+				line-height: 60px;
+				padding-left: 20px;
+				font-weight: 300;
+			}
+		}
+	.login-swap{
+		padding: 20px;
+		.login-content{
+			input:focus{
+				box-shadow:none;
+				outline: none;
+			}
+		}
+
+	}
+}

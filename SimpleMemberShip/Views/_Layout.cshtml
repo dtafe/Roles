@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/assets/stylesheets/style.css" rel="stylesheet" />
+    <link href="~/Content/assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,600,700&amp;subset=latin,vietnamese" rel="stylesheet" type="text/css">
+    <script src="~/Content/assets/js/jquery.min.js"></script>
+    <!-- Bootstrap jquery -->
+    <script src="~/Content/assets/js/custom.js"></script>
+    <script src="~/Content/assets/plugins/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active">@Html.ActionLink("HOME", "Index", "Home")</li>
+                        <li>@Html.ActionLink("CONTACT", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("ADMINISTRATOR", "Administrator", "Home")</li>
+                        
+                        @if (User.Identity.IsAuthenticated)
+                            {
+                                <li>@Html.ActionLink("LOG OUT", "Logout", "Account")</li>
+                                <li>
+                                    <strong style="color: #FFF;">@User.Identity.Name</strong>
+                                    @{
+                                        if (Roles.GetRolesForUser().Length > 0)
+                                        {
+                                            <strong style="color: #FFF;">@Roles.GetRolesForUser()[0]</strong>
+                                        }
+                                    }
+                            </li>
+                            }
+                            else
+                            {
+                                <li>@Html.ActionLink("LOGIN", "Login", "Account")</li>
+                                <li>@Html.ActionLink("REGISTER", "Register", "Account")</li>
+                            }
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        <!--End Nav-->
+    </header>
+    <!-- end:header -->
+    <div id="content">
+        <div class="jumbotron">
+            <div class="container">
+                @*<p><a class="btn btn-primary btn-lg">Learn more</a></p>*@
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <!-- end:content -->
+</body>
+</html>
